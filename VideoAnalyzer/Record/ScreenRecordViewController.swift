@@ -17,11 +17,23 @@ class ScreenRecordViewController: UIViewController {
     var noNeedToRecordView: UIView?
     @IBOutlet weak var lblShouldRecord: UILabel!
     
+    @IBOutlet weak var btnStart: UIButton!
+    
+    @IBOutlet weak var btnStop: UIButton!
+    
+    @IBOutlet weak var btnPlay: UIButton!
     let recorder = Recorder()
     @IBAction func playVideo(_ sender: Any) {
-        let settings = CXEImagesToVideo.videoSettings(codec: AVVideoCodecH264, width: (recorder.recordedImages[0].cgImage?.width)!, height: (recorder.recordedImages[0].cgImage?.height)!)
+        var images = [UIImage]()
+        recorder.recordedImagesPath.forEach { (imagePath) in
+            guard let image = UIImage(contentsOfFile: URL.urlInDocumentsDirectory(with: imagePath).path) else {
+                return
+            }
+            images.append(image)
+        }
+        let settings = CXEImagesToVideo.videoSettings(codec: AVVideoCodecType.h264.rawValue, width: (images[0].cgImage?.width)!, height: (images[0].cgImage?.height)!)
         let movieMaker = CXEImagesToVideo(videoSettings: settings)
-        movieMaker.createMovieFrom(images: recorder.recordedImages){[unowned self] (fileURL:URL) in
+        movieMaker.createMovieFrom(images: images){[unowned self] (fileURL:URL) in
             let player = AVPlayer(url: fileURL)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
@@ -79,6 +91,9 @@ class ScreenRecordViewController: UIViewController {
         self.shouldRecordView.shouldRecord = true
         self.noNeedToRecordView?.shouldRecord = false
         self.lblShouldRecord.shouldRecord = true
+//        self.btnPlay.shouldRecord = true
+//        self.btnStop.shouldRecord = true
+//        self.btnStart.shouldRecord = true
         recorder.view = self.shouldRecordView
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         UIView.animate(withDuration: 1, delay: 0.0, options:[UIView.AnimationOptions.repeat, UIView.AnimationOptions.autoreverse], animations: {

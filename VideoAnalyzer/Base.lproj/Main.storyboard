@@ -203,6 +203,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="vTb-nk-Eb5"/>
                     <connections>
+                        <outlet property="btnPlay" destination="0bd-4S-0Y2" id="eLG-Nv-Mdy"/>
+                        <outlet property="btnStart" destination="dUP-fS-X6F" id="gBi-RW-zQP"/>
+                        <outlet property="btnStop" destination="rQH-VQ-tYE" id="jgU-Ua-ZCl"/>
                         <outlet property="lblShouldRecord" destination="W0c-2V-58P" id="y7E-kM-uJe"/>
                         <outlet property="shouldRecordView" destination="wF2-O6-nrd" id="bQq-Tl-xxc"/>
                     </connections>

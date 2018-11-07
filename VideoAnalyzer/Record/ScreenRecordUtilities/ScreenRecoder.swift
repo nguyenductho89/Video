@@ -11,7 +11,8 @@ import UIKit
 
 @objc public class Recorder: NSObject {
     var displayLink : CADisplayLink?
-    var recordedImages = [UIImage]()
+//    var recordedImages = [UIImage]()
+    var recordedImagesPath = [String]()
     var imageCounter = 0
     public var view : UIView?
     var outputPath : NSString?
@@ -89,13 +90,14 @@ import UIKit
        var path = outputPathString()
         path = "\(path)/\(name)-\(imageCounter).\(fileExtension)"
         
-        recordedImages.append(image!)
+//        recordedImages.append(image!)
         imageCounter = imageCounter + 1
         
         if let imageRaw = data {
             do {
                 print("video link: \(path)")
             try imageRaw.write(to: NSURL(string: path)! as URL, options: .atomic)
+                recordedImagesPath.append("\(name)-\(imageCounter).\(fileExtension)")
             }catch {
                 print("cannot save image")
             }
