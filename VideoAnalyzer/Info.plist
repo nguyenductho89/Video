@@ -41,5 +41,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;Allow app to use camera&quot;</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>&quot;Allow app to use microphone&quot;</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&quot;Allow app to save your video&quot;</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>&quot;Allow app to save your video&quot;</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 </dict>
 </plist>
