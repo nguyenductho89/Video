@@ -70,7 +70,7 @@ class ScreenRecordViewController: UIViewController {
     @IBAction func stop(_ sender: Any) {
         recorder.stop()
         addNoNeedRecordView()
-        self.timer.invalidate()
+        //self.timer.invalidate()
     }
     var timer: Timer!
     override func viewDidLoad() {
@@ -94,7 +94,7 @@ class ScreenRecordViewController: UIViewController {
         super.didReceiveMemoryWarning()
         recorder.stop()
         addNoNeedRecordView()
-        self.timer.invalidate()
+        //self.timer.invalidate()
         playVideo(self)
     }
     
