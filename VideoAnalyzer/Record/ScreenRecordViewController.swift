@@ -9,7 +9,6 @@
 import UIKit
 import ReplayKit
 import AVKit
-import LLSimpleCamera
 
 class ScreenRecordViewController: UIViewController {
     
