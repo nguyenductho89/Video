@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-aB-lrf">
-                                <rect key="frame" x="145" y="350.5" width="85" height="30"/>
+                                <rect key="frame" x="145" y="326" width="85" height="30"/>
                                 <state key="normal" title="Select video"/>
                                 <connections>
                                     <action selector="selectVideo:" destination="3bn-Vt-aoW" eventType="touchUpInside" id="nNy-IL-mEC"/>
@@ -128,6 +128,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="B9K-gx-vpP" kind="relationship" relationship="viewControllers" id="UYE-pG-LqD"/>
+                        <segue destination="WE4-Ah-QSA" kind="relationship" relationship="viewControllers" id="Bej-1e-gkg"/>
+                        <segue destination="fZi-Jw-SJT" kind="relationship" relationship="viewControllers" id="pAB-oJ-7zq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUj-4I-Qp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -143,10 +145,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wF2-O6-nrd">
-                                <rect key="frame" x="16" y="71" width="343" height="487"/>
+                                <rect key="frame" x="0.0" y="7.5" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record this view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-2V-58P">
-                                        <rect key="frame" x="132" y="32" width="190" height="20.5"/>
+                                        <rect key="frame" x="92.5" y="323.5" width="190" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="cHk-2O-bDH"/>
                                         </constraints>
@@ -155,11 +157,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="W0c-2V-58P" firstAttribute="top" secondItem="wF2-O6-nrd" secondAttribute="top" constant="32" id="bmB-Jw-pdD"/>
-                                    <constraint firstAttribute="trailing" secondItem="W0c-2V-58P" secondAttribute="trailing" constant="21" id="kZX-W1-BYh"/>
-                                    <constraint firstItem="W0c-2V-58P" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wF2-O6-nrd" secondAttribute="leading" constant="20" symbolic="YES" id="yDM-jp-IKg"/>
+                                    <constraint firstItem="W0c-2V-58P" firstAttribute="centerX" secondItem="wF2-O6-nrd" secondAttribute="centerX" id="EhO-Vv-5zY"/>
+                                    <constraint firstItem="W0c-2V-58P" firstAttribute="centerY" secondItem="wF2-O6-nrd" secondAttribute="centerY" id="pvG-Iq-2Rp"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-cP-UYy">
@@ -191,13 +192,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wF2-O6-nrd" firstAttribute="leading" secondItem="Yh1-89-ZWj" secondAttribute="leading" constant="16" id="4Rp-SB-amW"/>
+                            <constraint firstItem="wF2-O6-nrd" firstAttribute="centerY" secondItem="Yh1-89-ZWj" secondAttribute="centerY" id="3Qd-xY-VLo"/>
+                            <constraint firstItem="wF2-O6-nrd" firstAttribute="width" secondItem="zpL-uB-U89" secondAttribute="width" id="5Ja-Gu-rpR"/>
+                            <constraint firstItem="wF2-O6-nrd" firstAttribute="height" secondItem="zpL-uB-U89" secondAttribute="height" id="695-Iy-GFf"/>
+                            <constraint firstItem="wF2-O6-nrd" firstAttribute="centerX" secondItem="Yh1-89-ZWj" secondAttribute="centerX" id="8hj-r2-fVg"/>
                             <constraint firstItem="Mjj-cP-UYy" firstAttribute="centerX" secondItem="Yh1-89-ZWj" secondAttribute="centerX" id="Hf5-3R-fwD"/>
                             <constraint firstItem="Mjj-cP-UYy" firstAttribute="leading" secondItem="Yh1-89-ZWj" secondAttribute="leading" constant="8" id="XGg-Cn-OUQ"/>
-                            <constraint firstItem="rQH-VQ-tYE" firstAttribute="top" secondItem="wF2-O6-nrd" secondAttribute="bottom" constant="21" id="cOl-lZ-ag6"/>
-                            <constraint firstItem="wF2-O6-nrd" firstAttribute="centerX" secondItem="Yh1-89-ZWj" secondAttribute="centerX" id="dbF-5n-66I"/>
                             <constraint firstItem="Yh1-89-ZWj" firstAttribute="bottom" secondItem="Mjj-cP-UYy" secondAttribute="bottom" constant="9" id="r6c-G1-HsE"/>
-                            <constraint firstItem="wF2-O6-nrd" firstAttribute="top" secondItem="Yh1-89-ZWj" secondAttribute="top" constant="7" id="wxs-yo-dRY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yh1-89-ZWj"/>
                     </view>
@@ -212,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLQ-bw-mnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255.2" y="1618.7406296851575"/>
+            <point key="canvasLocation" x="770" y="1539"/>
         </scene>
         <!--Screen Recorđ-->
         <scene sceneID="FEy-QW-e0l">
@@ -231,7 +232,57 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncQ-CB-dHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="1618.7406296851575"/>
+            <point key="canvasLocation" x="65" y="1539"/>
+        </scene>
+        <!--Video Player-->
+        <scene sceneID="X5J-zO-TN0">
+            <objects>
+                <viewController id="WE4-Ah-QSA" customClass="ListVideoViewController" customModule="VideoAnalyzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IX4-XW-X1l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-p2-Lmf">
+                                <rect key="frame" x="115" y="304" width="145" height="30"/>
+                                <state key="normal" title="Open recorded video"/>
+                                <connections>
+                                    <action selector="editAndRecord:" destination="WE4-Ah-QSA" eventType="touchUpInside" id="026-z9-6L5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thB-oD-Ht3">
+                                <rect key="frame" x="121.5" y="357" width="132" height="30"/>
+                                <state key="normal" title="Open sample video"/>
+                                <connections>
+                                    <action selector="replayVideo:" destination="WE4-Ah-QSA" eventType="touchUpInside" id="PMf-NP-MKZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-qu-utw">
+                                <rect key="frame" x="67.5" y="59" width="240" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="0aM-rd-fao"/>
+                                    <constraint firstAttribute="width" constant="240" id="hDM-X3-mqp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kv9-p2-Lmf" firstAttribute="centerY" secondItem="oh1-3n-fTf" secondAttribute="centerY" id="2DT-H3-Pfc"/>
+                            <constraint firstItem="pcd-qu-utw" firstAttribute="centerX" secondItem="oh1-3n-fTf" secondAttribute="centerX" id="6Cg-tf-N8g"/>
+                            <constraint firstItem="pcd-qu-utw" firstAttribute="top" secondItem="oh1-3n-fTf" secondAttribute="top" constant="39" id="HDc-vc-FM5"/>
+                            <constraint firstItem="thB-oD-Ht3" firstAttribute="centerX" secondItem="oh1-3n-fTf" secondAttribute="centerX" id="Vfn-4P-WrQ"/>
+                            <constraint firstItem="kv9-p2-Lmf" firstAttribute="centerX" secondItem="oh1-3n-fTf" secondAttribute="centerX" id="bor-Hh-EI6"/>
+                            <constraint firstItem="thB-oD-Ht3" firstAttribute="top" secondItem="kv9-p2-Lmf" secondAttribute="bottom" constant="23" id="qXa-xy-S8b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oh1-3n-fTf"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Video Player" id="sU8-fo-wTz"/>
+                    <connections>
+                        <outlet property="imageViewTemp" destination="pcd-qu-utw" id="qOR-bl-r2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSM-JL-QQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="2202.5487256371816"/>
         </scene>
     </scenes>
 </document>

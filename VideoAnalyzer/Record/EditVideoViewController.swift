@@ -49,16 +49,17 @@ class EditVideoViewController: UIViewController {
 }
 
 // MARK: - UIImagePickerControllerDelegate
-
+var sampleVideoURL: URL!
 extension EditVideoViewController: UIImagePickerControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String,
             mediaType == (kUTTypeMovie as String),
             let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL
             else { return }
         dismiss(animated: true) {
-            self.editVideoFromURL(url)
+            sampleVideoURL = url
+            //self.editVideoFromURL(url)
 
         }
 //        self.videoUrl = url
@@ -72,6 +73,7 @@ extension EditVideoViewController : UINavigationControllerDelegate {}
 
 extension EditVideoViewController {
     func editVideoFromURL(_ url:URL){
+        print(url.absoluteString)
         let videoAsset = AVAsset(url: url)
         // 2 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition =  AVMutableComposition()

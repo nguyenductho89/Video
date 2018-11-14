@@ -13,6 +13,10 @@
 		D0D5B065218ECA0400B4C0C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D5B063218ECA0400B4C0C0 /* LaunchScreen.storyboard */; };
 		D0D5B070218ECA0400B4C0C0 /* VideoAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D5B06F218ECA0400B4C0C0 /* VideoAnalyzerTests.swift */; };
 		D0D5B07B218ECA0400B4C0C0 /* VideoAnalyzerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D5B07A218ECA0400B4C0C0 /* VideoAnalyzerUITests.swift */; };
+		D907FD682192B6EF00944350 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907FD672192B6EF00944350 /* VideoPlayerViewController.swift */; };
+		D907FD6B2192C2C500944350 /* RecordControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = D907FD6A2192C2C500944350 /* RecordControls.xib */; };
+		D907FD6D2192C2E000944350 /* RecordControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907FD6C2192C2E000944350 /* RecordControls.swift */; };
+		D907FD6F2192D41600944350 /* UIViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907FD6E2192D41600944350 /* UIViewUtilities.swift */; };
 		D9E4C3D121914A2C00F565EE /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E4C3C821914A2C00F565EE /* AddImageViewController.swift */; };
 		D9E4C3D221914A2C00F565EE /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E4C3C921914A2C00F565EE /* VideoHelper.swift */; };
 		D9E4C3D321914A2C00F565EE /* CustomImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E4C3CA21914A2C00F565EE /* CustomImagePickerViewController.swift */; };
@@ -55,6 +59,10 @@
 		D0D5B076218ECA0400B4C0C0 /* VideoAnalyzerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoAnalyzerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D5B07A218ECA0400B4C0C0 /* VideoAnalyzerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAnalyzerUITests.swift; sourceTree = "<group>"; };
 		D0D5B07C218ECA0400B4C0C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D907FD672192B6EF00944350 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		D907FD6A2192C2C500944350 /* RecordControls.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordControls.xib; sourceTree = "<group>"; };
+		D907FD6C2192C2E000944350 /* RecordControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordControls.swift; sourceTree = "<group>"; };
+		D907FD6E2192D41600944350 /* UIViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtilities.swift; sourceTree = "<group>"; };
 		D9E4C3C621914A2C00F565EE /* VideoAnalyzer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoAnalyzer-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9E4C3C721914A2C00F565EE /* CommonVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonVideoViewController.h; sourceTree = "<group>"; };
 		D9E4C3C821914A2C00F565EE /* AddImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
@@ -146,9 +154,20 @@
 			path = VideoAnalyzerUITests;
 			sourceTree = "<group>";
 		};
+		D907FD692192C1FB00944350 /* VideoPlayerControl */ = {
+			isa = PBXGroup;
+			children = (
+				D907FD6A2192C2C500944350 /* RecordControls.xib */,
+				D907FD6C2192C2E000944350 /* RecordControls.swift */,
+				D907FD6E2192D41600944350 /* UIViewUtilities.swift */,
+			);
+			path = VideoPlayerControl;
+			sourceTree = "<group>";
+		};
 		D9E4C3C521914A2C00F565EE /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				D907FD692192C1FB00944350 /* VideoPlayerControl */,
 				D9E4C3D92191705300F565EE /* ScreenRecordUtilities */,
 				D9E4C3C621914A2C00F565EE /* VideoAnalyzer-Bridging-Header.h */,
 				D9E4C3C721914A2C00F565EE /* CommonVideoViewController.h */,
@@ -159,6 +178,7 @@
 				D9E4C3CC21914A2C00F565EE /* CommonVideoViewController.m */,
 				D9E4C3CD21914A2C00F565EE /* RecordVideoViewController.swift */,
 				D9E4C3CE21914A2C00F565EE /* EditVideoViewController.swift */,
+				D907FD672192B6EF00944350 /* VideoPlayerViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -286,6 +306,7 @@
 			files = (
 				D0D5B065218ECA0400B4C0C0 /* LaunchScreen.storyboard in Resources */,
 				D0D5B062218ECA0400B4C0C0 /* Assets.xcassets in Resources */,
+				D907FD6B2192C2C500944350 /* RecordControls.xib in Resources */,
 				D0D5B060218ECA0200B4C0C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,12 +335,15 @@
 				D9E4C3D821914A2C00F565EE /* DrawingViewController.swift in Sources */,
 				D9E4C3D621914A2C00F565EE /* RecordVideoViewController.swift in Sources */,
 				D9E4C3D421914A2C00F565EE /* ScreenRecordViewController.swift in Sources */,
+				D907FD6D2192C2E000944350 /* RecordControls.swift in Sources */,
 				D9E4C3D321914A2C00F565EE /* CustomImagePickerViewController.swift in Sources */,
 				D9E4C3D221914A2C00F565EE /* VideoHelper.swift in Sources */,
 				D9E4C3D121914A2C00F565EE /* AddImageViewController.swift in Sources */,
+				D907FD6F2192D41600944350 /* UIViewUtilities.swift in Sources */,
 				D9E4C3D521914A2C00F565EE /* CommonVideoViewController.m in Sources */,
 				D9E4C3E92191BCCA00F565EE /* UIImageToMovie.swift in Sources */,
 				D0D5B05B218ECA0200B4C0C0 /* AppDelegate.swift in Sources */,
+				D907FD682192B6EF00944350 /* VideoPlayerViewController.swift in Sources */,
 				D9E4C3E7219182E500F565EE /* ScreenRecoder.swift in Sources */,
 				D9E4C3D721914A2C00F565EE /* EditVideoViewController.swift in Sources */,
 			);

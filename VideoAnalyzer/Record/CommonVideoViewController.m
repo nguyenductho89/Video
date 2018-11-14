@@ -45,7 +45,7 @@
     return YES;
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+ -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     // 1 - Get media type
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
     

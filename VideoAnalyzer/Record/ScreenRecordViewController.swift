@@ -34,6 +34,7 @@ class ScreenRecordViewController: UIViewController {
         let settings = CXEImagesToVideo.videoSettings(codec: AVVideoCodecType.h264.rawValue, width: (images[0].cgImage?.width)!, height: (images[0].cgImage?.height)!)
         let movieMaker = CXEImagesToVideo(videoSettings: settings)
         movieMaker.createMovieFrom(images: images){[unowned self] (fileURL:URL) in
+            print(fileURL.absoluteString)
             let player = AVPlayer(url: fileURL)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
@@ -41,27 +42,6 @@ class ScreenRecordViewController: UIViewController {
                 player.play()
             }
         }
-        
-        //        if ScreenRecordViewController.record == 0 {
-        //            let screenRecord = ScreenRecordCoordinator()
-        //            screenRecord.viewOverlay.stopButtonColor = UIColor.red
-        //            let randomNumber = arc4random_uniform(9999);
-        //            screenRecord.startRecording(withFileName: "coolScreenRecording\(randomNumber)", recordingHandler: { (error) in
-        //                print("Recording in progress")
-        //            }) { (error) in
-        //                print("Recording Complete")
-        //            }
-        //            ScreenRecordViewController.record = 1
-        //        } else {
-        //            let videoURL: URL = URL(fileURLWithPath: "file:///private/var/mobile/Containers/Data/Application/B8AE9F96-DA25-43C8-B7C8-B2541B623159/Documents/Replays/coolScreenRecording2722.mp4")
-        //            let player = AVPlayer(url: videoURL)
-        //            let playerViewController = AVPlayerViewController()
-        //            playerViewController.player = player
-        //            present(playerViewController, animated: true) { () -> Void in
-        //                player.play()
-        //            }
-        //            ScreenRecordViewController.record = 0
-        //        }
     }
     func addNoNeedRecordView () {
         if self.noNeedToRecordView == nil {

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordControls" customModule="VideoAnalyzer" customModuleProvider="target">
+            <connections>
+                <outlet property="btnPlay" destination="W3K-fH-hhA" id="gR5-SS-Zt5"/>
+                <outlet property="btnRecord" destination="Qn4-Cw-EgW" id="S3V-pY-4aW"/>
+                <outlet property="sliderVideoProgress" destination="Dpu-MS-IdG" id="48q-qg-c39"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="597" height="117"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dpu-MS-IdG">
+                    <rect key="frame" x="-2" y="65" width="601" height="31"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-fH-hhA">
+                    <rect key="frame" x="276" y="10" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="3kj-de-kGt"/>
+                        <constraint firstAttribute="width" constant="45" id="wRx-5Q-Xdp"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="pause"/>
+                    <connections>
+                        <action selector="tapPlay:" destination="-1" eventType="touchUpInside" id="DJA-ww-Mn9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-Cw-EgW">
+                    <rect key="frame" x="181" y="10" width="45" height="45"/>
+                    <state key="normal" backgroundImage="record"/>
+                    <connections>
+                        <action selector="tapRecord:" destination="-1" eventType="touchUpInside" id="fVS-z2-eSN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-kz-iPW">
+                    <rect key="frame" x="20" y="10" width="45" height="45"/>
+                    <state key="normal" backgroundImage="close"/>
+                    <connections>
+                        <action selector="tapClose:" destination="-1" eventType="touchUpInside" id="T9L-H3-HjK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEf-YY-HF9">
+                    <rect key="frame" x="371" y="10" width="45" height="45"/>
+                    <state key="normal" backgroundImage="edit"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Dpu-MS-IdG" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="2b2-gW-KJ0"/>
+                <constraint firstItem="W3K-fH-hhA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="706-iT-sDO"/>
+                <constraint firstItem="Qn4-Cw-EgW" firstAttribute="width" secondItem="W3K-fH-hhA" secondAttribute="width" id="FhE-0S-xWb"/>
+                <constraint firstItem="Qn4-Cw-EgW" firstAttribute="height" secondItem="W3K-fH-hhA" secondAttribute="height" id="OhS-wI-ePv"/>
+                <constraint firstItem="Gwt-kz-iPW" firstAttribute="height" secondItem="Qn4-Cw-EgW" secondAttribute="height" id="QBN-ga-kqh"/>
+                <constraint firstItem="bEf-YY-HF9" firstAttribute="centerY" secondItem="W3K-fH-hhA" secondAttribute="centerY" id="Tjh-wt-3aH"/>
+                <constraint firstItem="bEf-YY-HF9" firstAttribute="leading" secondItem="W3K-fH-hhA" secondAttribute="trailing" constant="50" id="Uf0-B3-3Mq"/>
+                <constraint firstItem="W3K-fH-hhA" firstAttribute="leading" secondItem="Qn4-Cw-EgW" secondAttribute="trailing" constant="50" id="WD4-Aw-B3Y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Dpu-MS-IdG" secondAttribute="bottom" constant="5" id="Xh3-VA-8YF"/>
+                <constraint firstItem="bEf-YY-HF9" firstAttribute="width" secondItem="W3K-fH-hhA" secondAttribute="width" id="bB9-b6-pcv"/>
+                <constraint firstItem="W3K-fH-hhA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bq2-d6-SzD"/>
+                <constraint firstItem="Gwt-kz-iPW" firstAttribute="centerY" secondItem="Qn4-Cw-EgW" secondAttribute="centerY" id="cRB-me-ntd"/>
+                <constraint firstItem="Gwt-kz-iPW" firstAttribute="width" secondItem="Qn4-Cw-EgW" secondAttribute="width" id="dKC-jn-ANM"/>
+                <constraint firstItem="Qn4-Cw-EgW" firstAttribute="centerY" secondItem="W3K-fH-hhA" secondAttribute="centerY" id="gHz-VD-GLf"/>
+                <constraint firstItem="Dpu-MS-IdG" firstAttribute="top" secondItem="W3K-fH-hhA" secondAttribute="bottom" constant="10" id="knN-lm-QP2"/>
+                <constraint firstItem="bEf-YY-HF9" firstAttribute="height" secondItem="W3K-fH-hhA" secondAttribute="height" id="nEg-nv-ssl"/>
+                <constraint firstItem="Gwt-kz-iPW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="s1B-ZO-j1Z"/>
+                <constraint firstItem="Dpu-MS-IdG" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="wyr-SJ-FpZ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="52" y="-73.313343328335833"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1OX-L8-WMG">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Button"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="close" width="48" height="48"/>
+        <image name="edit" width="72" height="72"/>
+        <image name="pause" width="75" height="75"/>
+        <image name="record" width="200.34782409667969" height="200.34782409667969"/>
+    </resources>
+</document>

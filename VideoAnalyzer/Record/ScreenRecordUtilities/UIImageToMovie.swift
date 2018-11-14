@@ -42,7 +42,7 @@ public class CXEImagesToVideo: NSObject{
         super.init()
         
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let tempPath = paths[0] + "/exprotvideo.mp4"
+        let tempPath = paths[0] + "/exportvideo1.mp4"
         if(FileManager.default.fileExists(atPath: tempPath)){
             guard (try? FileManager.default.removeItem(atPath: tempPath)) != nil else {
                 print("remove path failed")
