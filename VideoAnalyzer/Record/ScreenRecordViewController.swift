@@ -19,6 +19,9 @@ class ScreenRecordViewController: UIViewController {
     
     @IBOutlet weak var btnStart: UIButton!
     
+    @IBOutlet weak var playerContainerView: UIView!
+    let playerVC = AVPlayerViewController()
+    
     @IBOutlet weak var btnStop: UIButton!
     
     @IBOutlet weak var btnPlay: UIButton!
@@ -45,7 +48,7 @@ class ScreenRecordViewController: UIViewController {
     }
     func addNoNeedRecordView () {
         if self.noNeedToRecordView == nil {
-            self.noNeedToRecordView = UIView(frame: CGRect(x: 50, y: 250, width: 300, height: 350))
+            self.noNeedToRecordView = UIView(frame: CGRect(x: 50, y: 250, width: 250, height: 35))
             self.noNeedToRecordView!.backgroundColor = .white
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
             label.text = "Do not record this view"
@@ -59,11 +62,12 @@ class ScreenRecordViewController: UIViewController {
         recorder.start()
     }
     
+    
     @IBAction func stop(_ sender: Any) {
         recorder.stop()
         addNoNeedRecordView()
-        //self.timer.invalidate()
     }
+    
     var timer: Timer!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +83,39 @@ class ScreenRecordViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0.0, options:[UIView.AnimationOptions.repeat, UIView.AnimationOptions.autoreverse], animations: {
            
         }, completion: nil)
+        
+        
+        playerVC.view.embed(intoContainerView: playerContainerView)
+        playerVC.player = AVPlayer(url: URL(string: "http://techslides.com/demos/sample-videos/small.mp4")!)
+        playerVC.player?.play()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        beginSession()
+    }
+    
+    
+    let captureSession = AVCaptureSession()
+    var previewLayer: CALayer?
+    var captureDevice: AVCaptureDevice!
+    func beginSession() {
+        captureSession.sessionPreset = AVCaptureSession.Preset.iFrame960x540
+        let availableDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back
+            ).devices
+        captureDevice = availableDevice.first
+        
+        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
+        captureSession.addInput(captureDeviceInput)
+        
+        let previewlayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+        self.previewLayer = previewlayer
+        previewlayer.frame = CGRect(x: 150, y: 50, width: 250, height: 250)
+        self.view.layer.insertSublayer(self.previewLayer!, below: self.view.layer)
+        captureSession.startRunning()
+    }
+    
     @objc func update() {
         UIView.animate(withDuration: 1.0, animations: {
             self.shouldRecordView.backgroundColor = self.randomColor()
